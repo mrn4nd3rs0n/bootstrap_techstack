@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <!--styles for highlight.js-->
+  <link rel="stylesheet" href="hljs-monokai.css">
   <!-- Custom styles for this template -->
   <link href="starter-template.css" rel="stylesheet">
 </head>
@@ -48,11 +50,142 @@
       <h1>bootstrap_techstack</h1>
       <p>bootstrap_techstack is a Bootstrap and Jquery plugn that allows you to quickly generate a styled techstack for your website.</p>
       <h2 id="install">Install</h2>
+      <hr/>
       <p class="lead">Manual Install:</p>
-      <p>Copy <a target="_blank" href="https://github.com/mrn4nd3rs0n/bootstrap_techstack/blob/master/bootstrap_techstack.js">bootstrap_techstack.js</a> and a <a href="https://github.com/mrn4nd3rs0n/bootstrap_techstack/tree/master/themes" target="_blank">theme</a> into your project.</p>
+      <p>1. Copy <a target="_blank" href="https://github.com/mrn4nd3rs0n/bootstrap_techstack/blob/master/bootstrap_techstack.js">bootstrap_techstack.js</a> and a <a href="https://github.com/mrn4nd3rs0n/bootstrap_techstack/tree/master/themes" target="_blank">theme</a>        into your project.</p>
       <h2 id="setup">Setup</h2>
+      <hr/>
+      <p>1. Include references to Bootstrap and Jquery:</p>
+      <pre>
+        <code class="html">
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+
+          &lt;head&gt;
+            &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;
+            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no&quot; /&gt;
+            &lt;meta charset=&quot;utf-8&quot; /&gt;
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css&quot; /&gt;
+          &lt;/head&gt;
+
+          &lt;body&gt;
+            &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;
+            &lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+          &lt;/body&gt;
+
+          &lt;/html&gt;
+        </code>
+    </pre>
+      <p>2. Include references to bootstrap_techstack.js and a theme .css:</p>
+      <pre>
+        <code class="html">
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+
+          &lt;head&gt;
+            &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;
+            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no&quot; /&gt;
+            &lt;meta charset=&quot;utf-8&quot; /&gt;
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css&quot; /&gt;
+            &lt;!--bootstrap_techstack theme reference--&gt;
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;bsts_metro.css&quot; /&gt;
+          &lt;/head&gt;
+
+          &lt;body&gt;
+            &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;
+            &lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+            &lt;!--bootstrap_techstack script reference--&gt;
+            &lt;script src=&quot;bootstrap_techstack.js&quot;&gt;&lt;/script&gt;
+          &lt;/body&gt;
+
+          &lt;/html&gt;
+        </code>
+      </pre>
+      <p>3. Create bootstrap_techstack JSON config:</p>
+      <pre>
+    <code class="JSON">
+{
+   "rowQty": 3,
+   "colType": "xs",
+   "techstack": [{
+     "text": "Front End",
+     "border-color": "#E44D26",
+     "text-color": "#000000",
+     "items": [{
+       "text": "javascript",
+       "background-color": "#F0DB4F",
+       "text-color": "#323330"
+     }, {
+       "text": "jquery",
+       "background-color": "#131B28"
+     }, {
+       "text": "bootstrap",
+       "background-color": "#4A366B"
+     }, {
+       "text": "angular",
+       "background-color": "#E03237"
+     }, {
+       "text": "backbone",
+       "background-color": "#0071B5"
+     }, {
+       "text": "underscore",
+       "background-color": "#002A41"
+     }, {
+       "text": "gulp",
+       "background-color": "#CF4646"
+     }, {
+       "text": "css",
+       "background-color": "#1673B6",
+       "text-color": "#000"
+     }, {
+       "text": "sass",
+       "background-color": "#CC6699"
+     }]
+   }]
+}
+    </code>
+</pre>
+<p>4. Add tag for plugin and make plugin call:<br/>&nbsp;&nbsp;&nbsp;<small>techstack.json file is the saved config from step 3 above.</small></p>
+
+<pre>
+  <code class="html">
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+
+  &lt;head&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no&quot; /&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css&quot; /&gt;
+    &lt;!--bootstrap_techstack theme reference--&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;bsts_metro.css&quot; /&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;!--Plugin Tag--&gt;
+    &lt;div id=&quot;techstack&quot; /&gt;
+    &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+    &lt;!--bootstrap_techstack script reference--&gt;
+    &lt;script src=&quot;bootstrap_techstack.js&quot;&gt;&lt;/script&gt;
+    &lt;!--Plugin Call--&gt;
+    &lt;script&gt;
+      $(function() {
+        $.getJSON(&quot;techstack.json&quot;, function(data) {
+          $(&quot;#techstack&quot;).techstack(data);
+        });
+      })
+    &lt;/script&gt;
+  &lt;/body&gt;
+
+  &lt;/html&gt;
+  </code>
+</pre>
+<p><a href="#" target="_blank">Setup Source Code</a></p>
       <h2 id="examples">Examples</h2>
+      <hr/>
       <h2 id="config">Config</h2>
+      <hr/>
     </div>
 
   </div>
@@ -66,6 +199,9 @@
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
 </body>
 
 </html>
