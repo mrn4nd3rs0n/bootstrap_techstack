@@ -1,0 +1,80 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>bootstrap_techstack example-basic</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <!--styles for highlight.js-->
+  <link rel="stylesheet" href="hljs-monokai.css">
+  <!-- Custom styles for this template -->
+  <link href="starter-template.css" rel="stylesheet">
+  <!--techstack theme-->
+  <link href="examples/themes/bsts_metro.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="./">bootstrap_techstack</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="./#install">Install</a></li>
+          <li><a href="./#setup">Setup</a></li>
+          <li><a href="./#examples">Examples</a></li>
+          <li><a href="./#config">Config</a></li>
+          <li><a href="https://github.com/mrn4nd3rs0n/bootstrap_techstack" target="_blank">Github</a></li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <h2 id="install">Basic Techstack Example</h2>
+    <p>This example uses the metro theme and a basic config file showing some front end technologies.</p>
+    <br/>
+    <div id="basic-example" class="col-xs-4"/>
+  </div>
+  <!-- /.container -->
+
+
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+  <script src="bootstrap_techstack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  <!--Plugin Call-->
+   <script>
+     $(function() {
+       $.getJSON("examples/stacks/basic-techstack.json", function(data) {
+         $("#basic-example").techstack(data);
+       });
+     })
+   </script>
+</body>
+
+</html>
