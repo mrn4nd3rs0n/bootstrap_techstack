@@ -105,7 +105,7 @@
       <pre>
     <code class="JSON">
 {
-   "rowQty": 3,
+   "colQty": 3,
    "colType": "xs",
    "techstack": [{
      "text": "Front End",
@@ -184,15 +184,57 @@
 <p><a href="https://github.com/mrn4nd3rs0n/bootstrap_techstack/tree/master/examples/setup_example" target="_blank">Setup Source Code</a></p>
       <h2 id="examples">Examples</h2>
       <hr/>
-      <p><a href="example-basic.html" target="_blank">Basic Techstack Example</a></p>
+      <p><a href="example-basic.html" >Basic Techstack Example</a></p>
 
       <h2 id="config">Config</h2>
       <hr/>
+      <h3 id="config">Top Level Attributes:</h3>
+        <p class="lead">colQty</p>
+        <p>Use this attribute to assign bootstrap col # style to items in techstack. ex: 1,2,3,4</p>
+        <br/>
+        <p class="lead">colType</p>
+        <p>Use this attribute to assign bootstrap col type style to items in techstack. ex:xs,sm,md,lg</p>
+        <br/>
+        <p class="lead">techstack</p>
+        <p>Use this attribute to include an array of json techstack objects.</p>
+        <br/>
+        <h3 id="config">Techstack Level Attributes:</h3>
+        <p class="lead">text</p>
+        <p>Use this attribute to define text that displays in cell.</p>
+        <br/>
+        <p class="lead">text-color</p>
+        <p>Use this attribute to define hex cell text color. ex: #000000</p>
+        <br/>
+        <p class="lead">border-color</p>
+        <p>Use this attribute to define hex cell border color. ex: #333333</p>
+        <br/>
+        <p class="lead">background-color</p>
+        <p>Use this attribute to define hex cell background color. ex: #131B28</p>
+        <br/>
+        <p class="lead">items</p>
+        <p>Use this attribute to include an array of json item objects that will display as cells in the techstack.</p>
+        <h3 id="config">Item Level Attributes:</h3>
+        <p class="lead">text</p>
+        <p>Use this attribute to define text that displays in cell.</p>
+        <br/>
+        <p class="lead">text-color</p>
+        <p>Use this attribute to define hex cell text color. ex: #000000</p>
+        <br/>
+        <p class="lead">border-color</p>
+        <p>Use this attribute to define hex cell border color. ex: #333333</p>
+        <br/>
+        <p class="lead">background-color</p>
+        <p>Use this attribute to define hex cell background color. ex: #131B28</p>
+        <br/>
     </div>
 
   </div>
   <!-- /.container -->
-
+  <footer class="footer">
+   <div class="container">
+     <p class="text-muted">bootstrap_techstack is licenced under the MIT licence. Copyright (c) 2016 mrn4nd3rs0n.</p>
+   </div>
+ </footer>
 
   <!-- Bootstrap core JavaScript
     ================================================== -->
